@@ -39,13 +39,15 @@ angular.module('typeahead', [])
         };
         
         scope.addItem = function(item) {
-          scope.list.push(item);
-          scope.itemsearch = "";
-          blur = true;
-          if (scope.selPos >= scope.filteredItems.length-1) {
-            scope.selPos--; // To keep hover selection
+          if (item) {
+            scope.list.push(item);
+            scope.itemsearch = "";
+            blur = true;
+            if (scope.selPos >= scope.filteredItems.length-1) {
+              scope.selPos--; // To keep hover selection
+            }
+            ngModel.$setViewValue(scope.list);
           }
-          ngModel.$setViewValue(scope.list);
         };
         
         scope.removeItem = function(item) {
