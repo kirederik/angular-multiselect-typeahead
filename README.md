@@ -37,7 +37,8 @@ app.module('myApp', ['typeahead']) ...
 ```
 
 Where:
-    * `ng-model` is the selected items
-    * `items` is the typeahead list
-    * `displaytag` is the property that will appear in the tag
-    * `displayitem` is the property that will appear in the typeahead list 
+
+* `ng-model` is the selected items
+* `items` is the typeahead list
+* `displaytag` is the property that will appear in the tag
+* `displayitem` is the property that will appear in the typeahead list 
