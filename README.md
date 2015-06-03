@@ -8,7 +8,7 @@ A simple and easily customizable angularjs directive to a multiselect typeahead 
 
 Download the necessary files as you wish:
 
-* with Bower: $ bower install angular-multiselect-typeahead
+* with Bower: `bower install angular-multiselect-typeahead`
 * Cloning this repository
 
 ## Dependencies
