@@ -106,12 +106,13 @@ angular.module('typeahead', [])
             {{getDisplayTag(s)}} <span data-ng-click="removeItem(s)">x</span>\
           </li> \
           <li class="inputtag">\
-            <input data-ng-blur="focusOut()" focus="{{focused}}" type="text" data-ng-model="itemsearch" data-ng-keydown="keyPress($event)"/>\
+            <input data-ng-blur="focusOut()" focus="{{focused}}" data-ng-model-options="{debounce: 500}" \
+            type="text" data-ng-model="itemsearch" data-ng-keydown="keyPress($event)"/>\
           </li>\
         </ul>\
         <ul class="list" data-ng-show="focused">\
           <li data-ng-class="{\'active\': selPos == $index}" \
-              data-ng-repeat="item in (filteredItems = (items | filter: itemsearch | notin: list)) track by $index" \
+              data-ng-repeat="item in (filteredItems = (items | notin: list | filter: itemsearch | limitTo: 10)) track by $index" \
               data-ng-mousedown="addItem(item)" data-ng-mouseover="hover($index)">\
           {{getDisplayItem(item)}}\
           </li>\
