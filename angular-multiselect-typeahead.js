@@ -22,6 +22,7 @@ angular.module('typeahead', [])
         };
 
         scope.focusOut = function() {
+          scope.itemsearch = "";
           if (!blur) {
             scope.focused = false;
           } else {
