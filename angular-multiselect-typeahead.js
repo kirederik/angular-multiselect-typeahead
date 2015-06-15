@@ -31,10 +31,12 @@ angular.module('typeahead', [])
           }
         };
         
+        // Change me for custom display name on select list
         scope.getDisplayItem = function(item) {
-          return item[attrs.displayitem];
+          return item[attrs.displayitem]; 
         };
         
+        // Change me for custom display name on tags (chips)
         scope.getDisplayTag = function(item) {
           return item[attrs.displaytag];
         };
@@ -72,6 +74,9 @@ angular.module('typeahead', [])
           };
           
           switch (evt.keyCode) {
+            case 27:
+              scope.focusOut();
+              break;
             case 13: 
               if(scope.selPos > -1) {
                 scope.addItem(scope.filteredItems[scope.selPos]);
